@@ -1,0 +1,85 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "BaconBoss Hub | Crocs World Tycoon", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+_G.spot1 = true
+_G.spot2 = true
+_G.spot3 = true
+_G.spot4 = true
+
+function spot1()
+     while _G.spot1 == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot1.ActiveButtons.TycoonButton.ButtonTop.CFrame
+     wait(.1)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot1.Structures["[5] SignStructures"].Collector.Collider.CFrame
+     wait(.1)
+    end
+end
+
+function spot2()
+    while _G.spot2 == true do
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot2.ActiveButtons.TycoonButton.ButtonTop.CFrame
+     wait(.1)
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot2.Structures["[5] SignStructures"].Collector.Collider.CFrame
+     wait(.1)
+   end
+end
+
+function spot3()
+    while _G.spot3 == true do
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot3.ActiveButtons.TycoonButton.ButtonTop.CFrame
+     wait(.1)
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot3.Structures["[5] SignStructures"].Collector.Collider.CFrame
+     wait(.1)
+   end
+end
+
+function spot4()
+    while _G.spot4 == true do
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot4.ActiveButtons.TycoonButton.ButtonTop.CFrame
+     wait(.1)
+     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Tycoons.TycoonPlot4.Structures["[5] SignStructures"].Collector.Collider.CFrame
+     wait(.1)
+   end
+end
+
+local MainTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+MainTab:AddToggle({
+	Name = "Auto Build At Tycoon Plot 1",
+	Default = false,
+	Callback = function(Value)
+		_G.spot1 = Value
+        spot1()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Build At Tycoon Plot 2",
+	Default = false,
+	Callback = function(Value)
+		_G.spot2 = Value
+        spot2()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Build At Tycoon Plot 3",
+	Default = false,
+	Callback = function(Value)
+		_G.spot3 = Value
+        spot3()
+	end    
+})
+
+MainTab:AddToggle({
+	Name = "Auto Build At Tycoon Plot 4",
+	Default = false,
+	Callback = function(Value)
+		_G.spot4 = Value
+        spot4()
+	end    
+})
